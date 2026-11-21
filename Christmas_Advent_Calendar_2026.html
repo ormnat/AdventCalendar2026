@@ -1,0 +1,2513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="sonnet">
+  <title>Preparing the Way — 34-Day Christmas Scripture Advent Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces (Sonnet: aged ivory paper & warm parchment) */
+      --background: #f5efe0;
+      --surface-container-low: #f8f3e7;
+      --surface-container: #ece3cf;
+      --surface-container-high: #e4d8bf;
+
+      /* Ink */
+      --on-surface: #1f1a17;
+      --on-surface-variant: #4a3f38;
+
+      /* Rules */
+      --outline: #a8843f;
+      --outline-variant: #d8c7a3;
+
+      /* Accents */
+      --primary: #6b1424;
+      --primary-hover: #530e1b;
+      --on-primary: #f5efe0;
+      --primary-container: #efe0dc;
+      --on-primary-container: #4a0d18;
+      --secondary: #2f4a3a;
+      --secondary-container: #e3ece5;
+      --on-secondary-container: #1f3528;
+      --tertiary: #a8843f;
+      --error: #9b2c1f;
+      --on-error: #f5efe0;
+
+      /* Semantic & Focus */
+      --positive: #2f4a3a;
+      --warning: #8a5a19;
+      --focus: #6b1424;
+
+      /* Data series */
+      --data-1: #6b1424;
+      --data-2: #2f4a3a;
+      --data-3: #a8843f;
+      --data-4: #3d5a73;
+      --data-context: #b9ad9c;
+
+      /* Fonts */
+      --font-headline: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Crimson Pro', Georgia, serif;
+      --font-label: 'Cormorant Garamond', Georgia, serif;
+
+      /* Type scale (Focused Tool with Cormorant Garamond step-up for readability) */
+      --display-size: clamp(1.95rem, 1.45rem + 2vw, 2.75rem);
+      --headline-size: clamp(1.35rem, 1.15rem + 0.7vw, 1.65rem);
+      --subhead-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.3rem);
+      --body-size: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem);
+      --label-size: 0.78rem;
+
+      /* Shape */
+      --rounded: 0px;
+      --rounded-lg: 0px;
+      --rounded-full: 9999px;
+
+      /* Style effects */
+      --gilt-rule: 1px solid var(--outline);
+      --gilt-rule-soft: 1px solid var(--outline-variant);
+      --gilt-frame-inset: 5px;
+      --paper-vignette: inset 0 0 90px rgb(120 90 40 / 0.16);
+      --focus-ring: 0 0 0 2px var(--background), 0 0 0 4px var(--focus);
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      position: static !important;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      box-shadow: var(--paper-vignette);
+      padding-bottom: var(--space-2xl);
+    }
+
+    .page-container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-md) var(--space-2xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+
+    .page-container * {
+      min-width: 0;
+    }
+
+    /* Typography helpers */
+    .label-voice {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      line-height: 1.3;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      color: var(--on-surface);
+      margin: 0;
+    }
+
+    /* 1. Masthead inside the single Gilt Double Frame */
+    .gilt-frame {
+      border: var(--gilt-rule);
+      outline: var(--gilt-rule);
+      outline-offset: calc(-1 * var(--gilt-frame-inset));
+      padding: var(--space-xl) var(--space-lg);
+      background-color: var(--surface-container-low);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .masthead-kicker {
+      color: var(--primary);
+    }
+
+    .masthead-title {
+      font-size: var(--display-size);
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: -0.005em;
+      max-width: 20ch;
+    }
+
+    .masthead-ornament {
+      width: 64px;
+      height: 1px;
+      background-color: var(--outline);
+      margin: var(--space-xs) auto;
+    }
+
+    .masthead-lede {
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      color: var(--on-surface-variant);
+      max-width: 54ch;
+      margin: 0;
+    }
+
+    .masthead-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin-top: var(--space-xs);
+    }
+
+    /* Buttons (square corners, oxblood fill or outline) */
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border-radius: var(--rounded);
+      transition: background-color var(--dur-micro) var(--ease-out),
+                  color var(--dur-micro) var(--ease-out),
+                  border-color var(--dur-micro) var(--ease-out);
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible,
+    input:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: 0 var(--space-lg);
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      background-color: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+    }
+
+    .btn-subtle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      background-color: var(--surface-container-low);
+      color: var(--on-surface);
+      border: var(--gilt-rule-soft);
+    }
+
+    .btn-subtle:hover {
+      background-color: var(--surface-container);
+      border-color: var(--outline);
+    }
+
+    .btn-subtle[aria-pressed="true"],
+    .filter-pill[aria-pressed="true"] {
+      background-color: var(--secondary);
+      color: var(--on-primary);
+      border-color: var(--secondary);
+    }
+
+    /* Key Figures Tracker Band */
+    .ruled-band {
+      border-block: var(--gilt-rule);
+      padding-block: var(--space-md);
+    }
+
+    .figures-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-md);
+      text-align: center;
+    }
+
+    .figure-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-xs) var(--space-sm);
+    }
+
+    .figure-cell + .figure-cell {
+      border-left: var(--gilt-rule-soft);
+    }
+
+    .figure-label {
+      color: var(--primary);
+    }
+
+    .figure-value {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+      line-height: 1.05;
+      color: var(--on-surface);
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    .figure-caption {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--on-surface-variant);
+      line-height: 1.3;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 4px;
+      background-color: var(--surface-container-high);
+      margin-top: var(--space-md);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--primary);
+      transition: width var(--dur-long) var(--ease-out);
+    }
+
+    /* Section Headings */
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-xs);
+      border-bottom: var(--gilt-rule-soft);
+      padding-bottom: var(--space-sm);
+    }
+
+    .section-header h2 {
+      font-size: var(--headline-size);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--on-surface-variant);
+      max-width: 56ch;
+    }
+
+    /* 34-Day Advent Calendar Doors Overview Grid */
+    .calendar-section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .door-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-md);
+      font-size: 0.9rem;
+      color: var(--on-surface-variant);
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      border: 1px solid var(--outline-variant);
+      background-color: var(--surface-container-low);
+    }
+
+    .legend-swatch.is-done {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    .legend-swatch.is-journaled {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .doors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+      gap: var(--space-sm);
+    }
+
+    .door-tile {
+      min-height: 60px;
+      padding: var(--space-xs);
+      background-color: var(--surface-container-low);
+      border: var(--gilt-rule-soft);
+      color: var(--on-surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      position: relative;
+      text-align: center;
+    }
+
+    .door-tile:hover {
+      background-color: var(--surface-container);
+      border-color: var(--outline);
+    }
+
+    .door-tile.is-active {
+      border-color: var(--primary);
+      box-shadow: inset 0 0 0 1px var(--primary);
+    }
+
+    .door-tile.is-completed {
+      background-color: var(--secondary-container);
+      border-color: var(--secondary);
+      color: var(--on-secondary-container);
+    }
+
+    .door-tile.has-note:not(.is-completed) {
+      background-color: var(--primary-container);
+      border-color: var(--primary);
+      color: var(--on-primary-container);
+    }
+
+    .door-tile-num {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 1.1;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    .door-tile-date {
+      font-family: var(--font-label);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--on-surface-variant);
+    }
+
+    .door-tile.is-completed .door-tile-date {
+      color: var(--on-secondary-container);
+    }
+
+    .door-tile-dot {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 6px;
+      height: 6px;
+      border-radius: var(--rounded-full);
+      background-color: var(--primary);
+    }
+
+    .door-tile.is-completed .door-tile-dot {
+      background-color: var(--secondary);
+    }
+
+    /* Filter & Controls Row */
+    .controls-panel {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      padding: var(--space-md);
+      background-color: var(--surface-container-low);
+      border-block: var(--gilt-rule-soft);
+    }
+
+    .controls-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      flex: 1 1 220px;
+    }
+
+    .field-label {
+      color: var(--primary);
+    }
+
+    .select-input {
+      min-height: 44px;
+      padding: var(--space-xs) var(--space-lg) var(--space-xs) var(--space-sm);
+      background-color: var(--background);
+      color: var(--on-surface);
+      border: 1px solid var(--outline-variant);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      border-radius: var(--rounded);
+    }
+
+    .controls-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      align-items: center;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+
+    .filter-pill {
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      background-color: transparent;
+      color: var(--on-surface-variant);
+      border: 1px solid var(--outline-variant);
+    }
+
+    .filter-pill:hover {
+      background-color: var(--surface-container);
+      color: var(--on-surface);
+    }
+
+    /* Daily Scripture Accordion Doors */
+    .days-list {
+      display: flex;
+      flex-direction: column;
+      border-top: var(--gilt-rule);
+    }
+
+    .day-entry {
+      border-bottom: var(--gilt-rule-soft);
+      background-color: transparent;
+      transition: background-color var(--dur-short) var(--ease-out);
+    }
+
+    .day-entry.is-open {
+      background-color: var(--surface-container-low);
+      border-bottom-color: var(--outline);
+    }
+
+    .day-header-row {
+      display: flex;
+      align-items: stretch;
+      gap: var(--space-xs);
+    }
+
+    .day-trigger {
+      flex: 1 1 auto;
+      min-height: 68px;
+      padding: var(--space-md) var(--space-sm);
+      background: transparent;
+      border: 0;
+      color: var(--on-surface);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      text-align: left;
+    }
+
+    .day-trigger:hover {
+      background-color: var(--surface-container-low);
+    }
+
+    .day-badge {
+      flex: 0 0 auto;
+      min-width: 64px;
+      padding: var(--space-xs) var(--space-sm);
+      border: var(--gilt-rule);
+      background-color: var(--background);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .day-entry.is-completed .day-badge {
+      background-color: var(--secondary-container);
+      border-color: var(--secondary);
+    }
+
+    .day-badge-num {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 1.3rem;
+      line-height: 1.05;
+      color: var(--primary);
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    .day-entry.is-completed .day-badge-num {
+      color: var(--secondary);
+    }
+
+    .day-badge-date {
+      color: var(--on-surface-variant);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+    }
+
+    .day-title-group {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .day-theme-kicker {
+      color: var(--secondary);
+    }
+
+    .day-title-text {
+      font-family: var(--font-headline);
+      font-size: var(--subhead-size);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--on-surface);
+    }
+
+    .day-ref-meta {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--on-surface-variant);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px var(--space-sm);
+      border: 1px solid var(--secondary);
+      border-radius: var(--rounded-full);
+      color: var(--secondary);
+      font-style: normal;
+      font-size: 0.7rem;
+    }
+
+    .status-tag.is-note {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .day-chevron {
+      flex: 0 0 auto;
+      color: var(--on-surface-variant);
+      transition: transform var(--dur-short) var(--ease-in-out);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .day-entry.is-open .day-chevron {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    .quick-check-btn {
+      flex: 0 0 auto;
+      min-width: 48px;
+      min-height: 48px;
+      align-self: center;
+      margin-right: var(--space-xs);
+      background: transparent;
+      border: 1px solid var(--outline-variant);
+      color: var(--on-surface-variant);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quick-check-btn:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+      background-color: var(--secondary-container);
+    }
+
+    .quick-check-btn[aria-pressed="true"] {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--on-primary);
+    }
+
+    /* Accordion Body */
+    .day-body {
+      padding: 0 var(--space-md) var(--space-lg) var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+      border-top: var(--gilt-rule-soft);
+      margin-top: var(--space-xs);
+      padding-top: var(--space-lg);
+    }
+
+    .day-body[hidden] {
+      display: none;
+    }
+
+    .scripture-panel {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .scripture-ref-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-xs);
+    }
+
+    .scripture-ref-label {
+      color: var(--primary);
+    }
+
+    /* Sonnet Verse Block */
+    .verse {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-size: clamp(1.18rem, 1.08rem + 0.35vw, 1.35rem);
+      line-height: 1.5;
+      color: var(--secondary);
+      border-left: var(--gilt-rule);
+      padding-left: var(--space-md);
+      margin: 0;
+      max-width: 58ch;
+    }
+
+    .context-note {
+      margin: 0;
+      color: var(--on-surface-variant);
+      max-width: 64ch;
+    }
+
+    .reflection-prompt-box {
+      background-color: var(--background);
+      border-left: 2px solid var(--primary);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .prompt-kicker {
+      color: var(--primary);
+    }
+
+    .prompt-question {
+      margin: 0;
+      font-family: var(--font-headline);
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.38;
+      color: var(--on-surface);
+    }
+
+    /* Journal Textarea */
+    .journal-field-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .journal-label-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--space-xs);
+    }
+
+    .journal-label {
+      color: var(--on-surface);
+    }
+
+    .save-indicator {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--secondary);
+    }
+
+    .journal-textarea {
+      width: 100%;
+      min-height: 148px;
+      padding: var(--space-md);
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--on-surface);
+      background-color: var(--background);
+      border: 1px solid var(--outline-variant);
+      border-bottom: 1.5px solid var(--on-surface-variant);
+      border-radius: var(--rounded);
+      resize: vertical;
+      transition: border-color var(--dur-micro) var(--ease-out);
+    }
+
+    .journal-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: var(--focus-ring);
+    }
+
+    .journal-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      font-size: 0.9rem;
+      color: var(--on-surface-variant);
+    }
+
+    .door-footer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      padding-top: var(--space-sm);
+      border-top: var(--gilt-rule-soft);
+    }
+
+    .step-nav-group {
+      display: flex;
+      gap: var(--space-xs);
+    }
+
+    /* Journal Export Sanctuary */
+    .export-sanctuary {
+      background-color: var(--surface-container-low);
+      border: var(--gilt-rule);
+      padding: var(--space-xl) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .export-controls {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      border-block: var(--gilt-rule-soft);
+      padding-block: var(--space-md);
+    }
+
+    .export-options-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      align-items: center;
+    }
+
+    .checkbox-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      cursor: pointer;
+      color: var(--on-surface);
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .export-buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+      gap: var(--space-sm);
+    }
+
+    .inline-feedback {
+      min-height: 1.4em;
+      font-style: italic;
+      color: var(--secondary);
+      margin: 0;
+    }
+
+    .inline-feedback.is-error {
+      color: var(--error);
+    }
+
+    .export-preview-frame {
+      background-color: var(--background);
+      border: var(--gilt-rule-soft);
+      padding: var(--space-lg);
+      max-height: 520px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .export-entry-item {
+      border-bottom: var(--gilt-rule-soft);
+      padding-bottom: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .export-entry-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .export-entry-meta {
+      color: var(--primary);
+    }
+
+    .export-entry-title {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .export-entry-scripture {
+      font-style: italic;
+      color: var(--secondary);
+      margin: 0;
+    }
+
+    .export-entry-prompt {
+      font-size: 0.95rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+
+    .export-entry-response {
+      margin: var(--space-xs) 0 0 0;
+      padding-left: var(--space-md);
+      border-left: 1px solid var(--outline);
+      white-space: pre-wrap;
+      color: var(--on-surface);
+    }
+
+    .export-entry-empty {
+      margin: var(--space-xs) 0 0 0;
+      font-style: italic;
+      color: var(--on-surface-variant);
+    }
+
+    .privacy-note {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      padding: var(--space-md);
+      background-color: var(--surface-container);
+      border-left: 2px solid var(--secondary);
+      font-size: 0.95rem;
+      color: var(--on-surface-variant);
+    }
+
+    .privacy-note i,
+    .privacy-note svg {
+      flex: 0 0 auto;
+      color: var(--secondary);
+      margin-top: 3px;
+    }
+
+    .danger-zone {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      padding-top: var(--space-sm);
+      border-top: var(--gilt-rule-soft);
+    }
+
+    .btn-danger-subtle {
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      background: transparent;
+      border: 1px solid var(--error);
+      color: var(--error);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .btn-danger-subtle:hover {
+      background-color: var(--primary-container);
+    }
+
+    /* Sticky Bottom Quick-Action Bar */
+    .sticky-footer-bar {
+      position: sticky;
+      bottom: 0;
+      z-index: 20;
+      background-color: var(--surface-container-low);
+      border-top: var(--gilt-rule);
+      padding: var(--space-sm) var(--space-md);
+    }
+
+    .sticky-footer-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .sticky-status-text {
+      font-size: 0.95rem;
+      color: var(--on-surface-variant);
+    }
+
+    .sticky-status-text strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Footer Colophon */
+    .colophon {
+      text-align: center;
+      padding-top: var(--space-lg);
+      border-top: var(--gilt-rule-soft);
+      color: var(--on-surface-variant);
+      font-size: 0.92rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .empty-filter-state {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md);
+      border-bottom: var(--gilt-rule-soft);
+      color: var(--on-surface-variant);
+    }
+
+    /* Mobile breakpoint */
+    @media (max-width: 640px) {
+      .page-container {
+        padding: var(--space-md) var(--space-sm) var(--space-xl);
+        gap: var(--space-lg);
+      }
+
+      .gilt-frame {
+        padding: var(--space-lg) var(--space-md);
+      }
+
+      .figures-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+      }
+
+      .figure-cell + .figure-cell {
+        border-left: 0;
+        border-top: var(--gilt-rule-soft);
+        padding-top: var(--space-sm);
+      }
+
+      .doors-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: var(--space-xs);
+      }
+
+      .day-trigger {
+        padding: var(--space-sm) var(--space-xs);
+        gap: var(--space-sm);
+      }
+
+      .day-badge {
+        min-width: 56px;
+        padding: var(--space-xs);
+      }
+
+      .day-body {
+        padding: var(--space-md) var(--space-sm) var(--space-lg);
+      }
+
+      .export-sanctuary {
+        padding: var(--space-lg) var(--space-md);
+      }
+
+      .sticky-footer-inner {
+        flex-wrap: wrap;
+      }
+
+      .sticky-footer-inner .btn-primary {
+        width: 100%;
+      }
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Print / Save to PDF Stylesheet */
+    @media print {
+      body {
+        background-color: var(--background);
+        color: var(--on-surface);
+      }
+
+      .page-shell {
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .no-print,
+      .sticky-footer-bar,
+      .calendar-section,
+      .controls-panel,
+      .days-list-section,
+      .export-controls,
+      .danger-zone,
+      .colophon {
+        display: none !important;
+      }
+
+      .export-sanctuary {
+        border: 0;
+        padding: 0;
+        background: transparent;
+      }
+
+      .export-preview-frame {
+        border: 0;
+        padding: 0;
+        max-height: none;
+        overflow: visible;
+      }
+
+      .export-entry-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <main class="page-container">
+      <!-- 1. Centered Masthead with Gilt Double Frame -->
+      <header class="gilt-frame no-print">
+        <span class="label-voice masthead-kicker">November 22 – December 25 · 34 Days of Christ</span>
+        <h1 class="masthead-title">Preparing the Way: A Christmas Scripture Advent Journal</h1>
+        <div class="masthead-ornament" aria-hidden="true"></div>
+        <p class="masthead-lede">
+          Walk day by day from ancient prophetic promises through the manger in Bethlehem to the Living Gift of the Savior, recording your quiet thoughts and prayerful responses along the way.
+        </p>
+        <div class="masthead-actions">
+          <button type="button" class="btn-primary label-voice" onclick="openNextUnreadDoor()">
+            <i data-lucide="book-open" aria-hidden="true"></i>
+            <span id="btn-continue-label">Open Day 1</span>
+          </button>
+          <button type="button" class="btn-secondary label-voice" onclick="jumpToExportTool()">
+            <i data-lucide="scroll-text" aria-hidden="true"></i>
+            <span>Export My Journal</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- 2. Progress Key Figures -->
+      <section class="ruled-band no-print" aria-label="Advent Progress Overview">
+        <div class="figures-row">
+          <div class="figure-cell">
+            <span class="label-voice figure-label">Doors Completed</span>
+            <span class="figure-value" id="stat-completed">0 / 34</span>
+            <span class="figure-caption" id="stat-completed-caption">Begin your 34-day walk</span>
+          </div>
+          <div class="figure-cell">
+            <span class="label-voice figure-label">Reflections Written</span>
+            <span class="figure-value" id="stat-entries">0</span>
+            <span class="figure-caption" id="stat-words-caption">0 words recorded</span>
+          </div>
+          <div class="figure-cell">
+            <span class="label-voice figure-label">Countdown to Christmas</span>
+            <span class="figure-value" id="stat-countdown">34 Days</span>
+            <span class="figure-caption" id="stat-countdown-caption">Nov 22 – Dec 25, 2026</span>
+          </div>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0" id="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </section>
+
+      <!-- 3. 34-Day Interactive Advent Calendar Doors Grid -->
+      <section class="calendar-section no-print" aria-labelledby="calendar-heading">
+        <div class="section-header">
+          <h2 id="calendar-heading">The Thirty-Four Advent Doors</h2>
+          <p class="section-subtitle">Tap any numbered door below to open its scripture reading, reflection question, and private journal page.</p>
+        </div>
+
+        <div class="door-legend" aria-label="Calendar door status legend">
+          <span class="legend-item"><span class="legend-swatch"></span> Unopened</span>
+          <span class="legend-item"><span class="legend-swatch is-journaled"></span> Reflection Written</span>
+          <span class="legend-item"><span class="legend-swatch is-done"></span> Completed</span>
+        </div>
+
+        <div class="doors-grid" id="doors-grid" role="navigation" aria-label="34 Advent Calendar Doors"></div>
+      </section>
+
+      <!-- 4. Daily Readings Filter & Accordion List -->
+      <section class="days-list-section no-print" aria-labelledby="readings-heading">
+        <div class="section-header">
+          <h2 id="readings-heading">Daily Scripture Readings &amp; Journal</h2>
+          <p class="section-subtitle">Each entry is saved automatically and privately on your device as you write.</p>
+        </div>
+
+        <div class="controls-panel" style="margin-top: var(--space-md);">
+          <div class="controls-top">
+            <div class="field-group">
+              <label for="theme-filter" class="label-voice field-label">Filter by Advent Movement</label>
+              <select id="theme-filter" class="select-input" onchange="handleThemeFilterChange(this.value)">
+                <option value="all">All 34 Days (Nov 22 – Dec 25)</option>
+                <option value="prophecies">I. Prophecies of the Messiah (Days 1–10)</option>
+                <option value="annunciation">II. Annunciation &amp; Preparing for Birth (Days 11–21)</option>
+                <option value="nativity">III. The Nativity in Bethlehem (Days 22–25)</option>
+                <option value="wisemen">IV. The Wise Men &amp; Protection (Days 26–27)</option>
+                <option value="mission">V. The Savior’s Mission &amp; Living Gift (Days 28–34)</option>
+              </select>
+            </div>
+            <div class="controls-actions">
+              <button type="button" class="btn-subtle label-voice" onclick="collapseAllDoors()">
+                <i data-lucide="chevrons-up" aria-hidden="true"></i>
+                <span>Collapse All</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-pills" role="group" aria-label="Completion status filter">
+            <button type="button" class="filter-pill label-voice" id="pill-status-all" aria-pressed="true" onclick="setStatusFilter('all')">All</button>
+            <button type="button" class="filter-pill label-voice" id="pill-status-unread" aria-pressed="false" onclick="setStatusFilter('unread')">Uncompleted</button>
+            <button type="button" class="filter-pill label-voice" id="pill-status-journaled" aria-pressed="false" onclick="setStatusFilter('journaled')">With Journal Notes</button>
+            <button type="button" class="filter-pill label-voice" id="pill-status-completed" aria-pressed="false" onclick="setStatusFilter('completed')">Completed</button>
+          </div>
+        </div>
+
+        <div class="days-list" id="days-list"></div>
+      </section>
+
+      <!-- 5. All-in-One Journal Export Sanctuary -->
+      <section class="export-sanctuary" id="export-sanctuary" aria-labelledby="export-heading">
+        <div class="section-header">
+          <span class="label-voice" style="color: var(--primary);">Keepsake Compilation</span>
+          <h2 id="export-heading">My 2026 Christmas Advent Journal</h2>
+          <p class="section-subtitle">Compile all 34 days—pairing each date, scripture reference, reflection prompt, and your personal entries—for saving, sharing, or printing.</p>
+        </div>
+
+        <div class="export-controls no-print">
+          <div class="export-options-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="export-only-written" onchange="refreshExportPreview()">
+              <span>Show only days with written reflections or completed status</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="export-include-scripture" checked onchange="refreshExportPreview()">
+              <span>Include scripture excerpts &amp; prompts</span>
+            </label>
+          </div>
+
+          <div class="export-buttons-grid">
+            <button type="button" class="btn-primary label-voice" onclick="copyJournalToClipboard()">
+              <i data-lucide="copy" aria-hidden="true"></i>
+              <span>Copy All to Clipboard</span>
+            </button>
+            <button type="button" class="btn-secondary label-voice" onclick="downloadJournalFile('md')">
+              <i data-lucide="file-down" aria-hidden="true"></i>
+              <span>Download Journal (.md)</span>
+            </button>
+            <button type="button" class="btn-secondary label-voice" onclick="downloadJournalFile('txt')">
+              <i data-lucide="file-text" aria-hidden="true"></i>
+              <span>Download Journal (.txt)</span>
+            </button>
+            <button type="button" class="btn-subtle label-voice" onclick="printJournal()">
+              <i data-lucide="printer" aria-hidden="true"></i>
+              <span>Print / Save to PDF</span>
+            </button>
+          </div>
+
+          <p class="inline-feedback" id="export-feedback" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="export-preview-frame" id="export-preview" aria-label="Compiled journal preview"></div>
+
+        <div class="privacy-note no-print">
+          <i data-lucide="lock" aria-hidden="true"></i>
+          <div>
+            <strong>Private Personal Storage:</strong> Your journal entries and completed checkmarks are stored privately in your device’s workspace storage so they remain intact between visits. Nothing is published or shared unless you choose to export it.
+          </div>
+        </div>
+
+        <div class="danger-zone no-print">
+          <span class="label-voice" style="color: var(--on-surface-variant);">Start Fresh</span>
+          <button type="button" class="btn-danger-subtle label-voice" id="btn-reset-journal" onclick="handleResetJournal(this)">
+            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+            <span>Reset All Entries</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Colophon -->
+      <footer class="colophon no-print">
+        <p style="margin: 0;">Scripture excerpts drawn from the King James Bible, the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price, paired with seasonal devotional themes.</p>
+        <p style="margin: 0; font-style: italic;">“Glory to God in the highest, and on earth peace, good will toward men.” — Luke 2:14</p>
+      </footer>
+    </main>
+
+    <!-- Sticky Mobile Quick-Action Footer -->
+    <div class="sticky-footer-bar no-print" role="region" aria-label="Quick journal actions">
+      <div class="sticky-footer-inner">
+        <span class="sticky-status-text" id="sticky-status-text">
+          <strong>0 of 34</strong> doors completed · <strong>0</strong> notes saved
+        </span>
+        <button type="button" class="btn-primary label-voice" onclick="jumpToExportTool()">
+          <i data-lucide="scroll-text" aria-hidden="true"></i>
+          <span>Export My Journal</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <api-shim></api-shim>
+  <script>
+    const ADVENT_DAYS = [
+      {
+        day: 1,
+        date: `Nov 22`,
+        fullDate: `Sunday, November 22, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `The Promise from the Beginning`,
+        reference: `Moses 5:9, 12`,
+        quote: `And in that day the Holy Ghost fell upon Adam, which beareth record of the Father and the Son, saying: I am the Only Begotten of the Father from the beginning, henceforth and forever… And Adam and Eve blessed the name of God, and they made all things known unto their sons and their daughters.`,
+        context: `From the very dawn of human history, Heavenly Father taught Adam and Eve that redemption would come through His Only Begotten Son—a truth they joyfully shared with their family.`,
+        question: `As you begin this 34-day countdown to Christmas, what does it mean to you that Jesus Christ’s coming was part of God’s loving plan from the very beginning?`
+      },
+      {
+        day: 2,
+        date: `Nov 23`,
+        fullDate: `Monday, November 23, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `A Hope of His Glory`,
+        reference: `Jacob 4:4`,
+        quote: `For, for this intent have we written these things, that they may know that we knew of Christ, and we had a hope of his glory many hundred years before his coming.`,
+        context: `Ancient prophets kept sacred records so future generations would recognize that faith in Christ spanned centuries before the star ever shone over Bethlehem.`,
+        question: `Where have you felt quiet hope in Jesus Christ during this year, even while waiting for promises or prayers yet to be fulfilled?`
+      },
+      {
+        day: 3,
+        date: `Nov 24`,
+        fullDate: `Tuesday, November 24, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `The Message of All the Prophets`,
+        reference: `Mosiah 13:33`,
+        quote: `For behold, did not Moses prophesy unto them concerning the coming of the Messiah, and that God should redeem his people? Yea, and even all the prophets who have prophesied ever since the world began—have they not spoken more or less concerning these things?`,
+        context: `Across dispensations, every prophet’s deepest witness converged on a single hope: that God Himself would come down to redeem His people.`,
+        question: `Which prophetic testimony of Christ—from scripture or from a living witness—strengthens your faith most right now?`
+      },
+      {
+        day: 4,
+        date: `Nov 25`,
+        fullDate: `Wednesday, November 25, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `Taking Away the Sins of the World`,
+        reference: `1 Nephi 10:10`,
+        quote: `And after he had baptized the Messiah with water, he should behold and bear record that he had baptized the Lamb of God, who should take away the sins of the world.`,
+        context: `Six hundred years before Bethlehem, Lehi taught his family that the coming Messiah would not merely be a wise teacher, but the Lamb of God who lifts the weight of sin.`,
+        question: `What burden, regret, or weakness do you feel invited to lay at the Savior’s feet as you prepare your heart this season?`
+      },
+      {
+        day: 5,
+        date: `Nov 26`,
+        fullDate: `Thursday, November 26, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `Out of Little Bethlehem`,
+        reference: `Micah 5:2`,
+        quote: `But thou, Beth-lehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting.`,
+        context: `Seven centuries before the Nativity, Micah named a small Judean village—later guiding the Wise Men to the place where the eternal King would tend and nurture His people.`,
+        question: `Why do you think the Lord so often works His greatest wonders in small, quiet, or overlooked places—and where do you see Him working quietly in your life?`
+      },
+      {
+        day: 6,
+        date: `Nov 27`,
+        fullDate: `Friday, November 27, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `Behold, Thy King Cometh`,
+        reference: `Zechariah 9:9`,
+        quote: `Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass.`,
+        context: `Zechariah’s invitation to rejoice describes a King unlike earthly monarchs—just, bringing salvation, and clothed in meekness and humility.`,
+        question: `How does remembering Jesus Christ’s humility reshape the way you want to treat the people around you this week?`
+      },
+      {
+        day: 7,
+        date: `Nov 28`,
+        fullDate: `Saturday, November 28, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `Mighty Miracles of Healing`,
+        reference: `Mosiah 3:5, 8`,
+        quote: `And lo, he shall come into the world… working mighty miracles, such as healing the sick, raising the dead, causing the lame to walk, the blind to receive their sight, and the deaf to hear… And he shall be called Jesus Christ, the Son of God, the Father of heaven and earth, the Creator of all things from the beginning; and his mother shall be called Mary.`,
+        context: `King Benjamin’s words came through an angel, detailing both the Savior’s mortal birth to Mary and His compassionate ministry of healing every kind of human suffering.`,
+        question: `Where in your own life, or in someone you love, are you praying for the Savior’s healing touch today?`
+      },
+      {
+        day: 8,
+        date: `Nov 29`,
+        fullDate: `Sunday, November 29, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `Gaining Victory Over Death`,
+        reference: `Mosiah 15:7–8`,
+        quote: `Yea, even so he shall be led, crucified, and slain, the flesh becoming subject even unto death… And thus God breaketh the bands of death, having gained the victory over death; giving the Son power to make intercession for the children of men.`,
+        context: `The cradle in Bethlehem points forward to the cross and the empty tomb. Abinadi bore bold witness that Christ entered mortality specifically to break the bands of death forever.`,
+        question: `How does knowing that Jesus Christ conquered death and intercedes for you bring comfort when you think of loved ones or face fear?`
+      },
+      {
+        day: 9,
+        date: `Nov 30`,
+        fullDate: `Monday, November 30, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `An Endless Light and Life`,
+        reference: `Mosiah 16:9`,
+        quote: `He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.`,
+        context: `As November closes and winter evenings lengthen, Abinadi’s declaration reminds us that Christ’s light is not a fragile candle—it can never be extinguished.`,
+        question: `In what ways has the Savior brought steady light into a dark or uncertain season of your life?`
+      },
+      {
+        day: 10,
+        date: `Dec 1`,
+        fullDate: `Tuesday, December 1, 2026`,
+        part: `prophecies`,
+        partLabel: `I · Prophecies of the Messiah`,
+        title: `The Lamb of God in Mary’s Arms`,
+        reference: `1 Nephi 11:20–21`,
+        quote: `And I looked and beheld the virgin again, bearing a child in her arms. And the angel said unto me: Behold the Lamb of God, yea, even the Son of the Eternal Father!`,
+        context: `On the first day of December, Nephi’s vision connects heaven’s highest condescension with the tender image of a young mother cradling her newborn Son.`,
+        question: `When you picture Mary holding the infant Jesus, what emotions or impressions about God’s love come to mind?`
+      },
+      {
+        day: 11,
+        date: `Dec 2`,
+        fullDate: `Wednesday, December 2, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `Fear Not, Thou Hast Found Favour`,
+        reference: `Luke 1:26–38`,
+        quote: `And the angel said unto her, Fear not, Mary: for thou hast found favour with God. And, behold, thou shalt conceive in thy womb, and bring forth a son, and shalt call his name Jesus… For with God nothing shall be impossible. And Mary said, Behold the handmaid of the Lord; be it unto me according to thy word.`,
+        context: `In quiet Nazareth, Gabriel delivered the greatest announcement in history. Though perplexed and humble, Mary responded with breathtaking trust.`,
+        question: `What part of your life feels uncertain right now where you want to answer the Lord with Mary’s faith: “Be it unto me according to thy word”?`
+      },
+      {
+        day: 12,
+        date: `Dec 3`,
+        fullDate: `Thursday, December 3, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `My Spirit Rejoiceth in God My Saviour`,
+        reference: `Luke 1:44, 47`,
+        quote: `For, lo, as soon as the voice of thy salutation sounded in mine ears, the babe leaped in my womb for joy… And Mary said, My soul doth magnify the Lord, And my spirit hath rejoiced in God my Saviour.`,
+        context: `When Mary greeted her cousin Elisabeth, joy filled the home—the unborn John leaped in recognition, and Mary sang one of scripture’s purest songs of praise.`,
+        question: `If someone asked you today why your spirit rejoices in Jesus Christ, what story or truth would you share?`
+      },
+      {
+        day: 13,
+        date: `Dec 4`,
+        fullDate: `Friday, December 4, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `The Dayspring from on High`,
+        reference: `Luke 1:78–79`,
+        quote: `Through the tender mercy of our God; whereby the dayspring from on high hath visited us, To give light to them that sit in darkness and in the shadow of death, to guide our feet into the way of peace.`,
+        context: `At John the Baptist’s naming, his father Zacharias prophesied that the approaching Messiah would arrive like dawn breaking over a shadowed world—guiding our feet toward peace.`,
+        question: `Where do you need the Savior’s “tender mercy” to guide your steps into greater peace this December?`
+      },
+      {
+        day: 14,
+        date: `Dec 5`,
+        fullDate: `Saturday, December 5, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `Emmanuel — God With Us`,
+        reference: `Matthew 1:18–25`,
+        quote: `And she shall bring forth a son, and thou shalt call his name Jesus: for he shall save his people from their sins… Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, God with us.`,
+        context: `Joseph was a just man who sought to protect Mary quietly, until an angel appeared in a dream and invited him into the sacred stewardship of caring for the Son of God.`,
+        question: `What does the name “Emmanuel—God with us” mean to you personally during seasons when you feel alone or stretched thin?`
+      },
+      {
+        day: 15,
+        date: `Dec 6`,
+        fullDate: `Sunday, December 6, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `The Lord Is My Light and Salvation`,
+        reference: `Psalm 27:1`,
+        quote: `The Lord is my light and my salvation; whom shall I fear? the Lord is the strength of my life; of whom shall I be afraid?`,
+        context: `David’s psalm echoes across the Advent season: no matter what darkness surrounds us, Christ’s light is steadier than our fears.`,
+        question: `What worry or fear can you hand over to the Lord today, trusting Him to be the strength of your life?`
+      },
+      {
+        day: 16,
+        date: `Dec 7`,
+        fullDate: `Monday, December 7, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `Built Upon the Rock of Our Redeemer`,
+        reference: `Helaman 5:12`,
+        quote: `Remember, remember that it is upon the rock of our Redeemer, who is Christ, the Son of God, that ye must build your foundation; that when the devil shall send forth his mighty winds… it shall have no power over you.`,
+        context: `Before the signs of Christ’s birth appeared in the Americas, Helaman taught his sons Nephi and Lehi that steady discipleship rests on an unshakable foundation in the Redeemer.`,
+        question: `What small, daily spiritual habit helps anchor your foundation on Christ when life grows busy?`
+      },
+      {
+        day: 17,
+        date: `Dec 8`,
+        fullDate: `Tuesday, December 8, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `A Night Without Darkness`,
+        reference: `Helaman 14:3–5`,
+        quote: `Behold, I give unto you a sign; for five years more cometh, and behold, then cometh the Son of God… there shall be great lights in heaven, insomuch that in the night before he cometh there shall be no darkness… and behold, there shall a new star arise, such an one as ye never have beheld.`,
+        context: `On the other side of the world from Bethlehem, Samuel the Lamanite foretold a luminous sign so faithful watchers would know the very night the Savior was born.`,
+        question: `Like the faithful Nephites watching for the new star, how are you intentionally watching for the Savior’s hand in your life this month?`
+      },
+      {
+        day: 18,
+        date: `Dec 9`,
+        fullDate: `Wednesday, December 9, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `Lift Up Your Head and Be of Good Cheer`,
+        reference: `3 Nephi 1:8–14`,
+        quote: `Lift up your head and be of good cheer; for behold, the time is at hand, and on this night shall the sign be given, and on the morrow come I into the world, to show unto the world that I will fulfil all that which I have caused to be spoken by the mouth of my holy prophets.`,
+        context: `When mockers threatened believers if the sign did not appear, Nephi prayed mightily—and the Lord’s voice assured the faithful that His promises never fail.`,
+        question: `Write about a time when the Lord answered a lingering prayer or helped you stay of good cheer while waiting on His timing.`
+      },
+      {
+        day: 19,
+        date: `Dec 10`,
+        fullDate: `Thursday, December 10, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `Gathered as His Sheep`,
+        reference: `1 Nephi 22:25`,
+        quote: `And he gathereth his children from the four quarters of the earth; and he numbereth his sheep, and they know him; and there shall be one fold and one shepherd; and he shall feed his sheep, and in him they shall find pasture.`,
+        context: `The Good Shepherd knows every soul by name, gathering His people from near and far into belonging, nourishment, and peace.`,
+        question: `Who is someone in your circle who might feel lonely or left out this Christmas, and how could you help gather them in love?`
+      },
+      {
+        day: 20,
+        date: `Dec 11`,
+        fullDate: `Friday, December 11, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `The Light of Christ Within Us`,
+        reference: `Moroni 7:15–19`,
+        quote: `For behold, the Spirit of Christ is given to every man, that he may know good from evil… Wherefore, I beseech of you, brethren, that ye should search diligently in the light of Christ that ye may know good from evil.`,
+        context: `The Light of Christ quietly illuminates our conscience, helping us discern what is good, judge righteously, and act with kindness.`,
+        question: `What quiet prompting to do good or show kindness have you felt recently, and how can you act on it today?`
+      },
+      {
+        day: 21,
+        date: `Dec 12`,
+        fullDate: `Saturday, December 12, 2026`,
+        part: `annunciation`,
+        partLabel: `II · Annunciation & Preparing for Birth`,
+        title: `The Light Which Is in All Things`,
+        reference: `Doctrine and Covenants 88:6`,
+        quote: `He that ascended up on high, as also he descended below all things, in that he comprehended all things, that he might be in all and through all things, the light of truth.`,
+        context: `Because Christ descended below all things—from a humble manger to Gethsemane—His light reaches into every corner of human experience.`,
+        question: `Reflect on a moment this year when you felt the Savior understood exactly what you were walking through.`
+      },
+      {
+        day: 22,
+        date: `Dec 13`,
+        fullDate: `Sunday, December 13, 2026`,
+        part: `nativity`,
+        partLabel: `III · The Nativity in Bethlehem`,
+        title: `Laid in a Manger`,
+        reference: `Luke 2:1–7`,
+        quote: `And she brought forth her firstborn son, and wrapped him in swaddling clothes, and laid him in a manger; because there was no room for them in the inn.`,
+        context: `Amid an imperial census and crowded streets, the Creator of the world entered mortal life in the humblest of surroundings, wrapped gently by His mother’s hands.`,
+        question: `Where is your heart and calendar crowded right now, and how can you make deliberate room for the Savior this week?`
+      },
+      {
+        day: 23,
+        date: `Dec 14`,
+        fullDate: `Monday, December 14, 2026`,
+        part: `nativity`,
+        partLabel: `III · The Nativity in Bethlehem`,
+        title: `Good Tidings of Great Joy`,
+        reference: `Luke 2:8–14`,
+        quote: `And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people. For unto you is born this day in the city of David a Saviour, which is Christ the Lord… Glory to God in the highest, and on earth peace, good will toward men.`,
+        context: `Heaven’s first birth announcement was delivered not to rulers in palaces, but to watchful shepherds in the night—proclaiming that the Savior belongs to all people.`,
+        question: `Why do the words “to all people” matter to you as you pray for your family, neighbors, and the wider world this Christmas?`
+      },
+      {
+        day: 24,
+        date: `Dec 15`,
+        fullDate: `Tuesday, December 15, 2026`,
+        part: `nativity`,
+        partLabel: `III · The Nativity in Bethlehem`,
+        title: `Pondered in Her Heart`,
+        reference: `Luke 2:15–19`,
+        quote: `And they came with haste, and found Mary, and Joseph, and the babe lying in a manger… But Mary kept all these things, and pondered them in her heart.`,
+        context: `After the shepherds’ hurried visit and joyful testimony, Mary grew quiet—treasuring the sacred witnesses of that night deep within her memory.`,
+        question: `What sacred Christmas memories, family traditions, or quiet spiritual impressions are you pondering in your heart this season?`
+      },
+      {
+        day: 25,
+        date: `Dec 16`,
+        fullDate: `Wednesday, December 16, 2026`,
+        part: `nativity`,
+        partLabel: `III · The Nativity in Bethlehem`,
+        title: `Mine Eyes Have Seen Thy Salvation`,
+        reference: `Luke 2:25–35`,
+        quote: `Lord, now lettest thou thy servant depart in peace, according to thy word: For mine eyes have seen thy salvation, Which thou hast prepared before the face of all people; A light to lighten the Gentiles, and the glory of thy people Israel.`,
+        context: `In the temple at Jerusalem, faithful Simeon and Anna recognized the infant Messiah after decades of patient devotion and prayerful waiting.`,
+        question: `What does Simeon’s lifelong patience teach you about recognizing the Lord’s hand in ordinary days?`
+      },
+      {
+        day: 26,
+        date: `Dec 17`,
+        fullDate: `Thursday, December 17, 2026`,
+        part: `wisemen`,
+        partLabel: `IV · The Wise Men & Protection`,
+        title: `We Have Seen His Star in the East`,
+        reference: `Matthew 2:1–12`,
+        quote: `When they saw the star, they rejoiced with exceeding great joy. And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh.`,
+        context: `Guided by Micah’s prophecy and the heavenly star, the Wise Men traveled far to worship Christ and lay their finest treasures before Him.`,
+        question: `If you were opening your heart’s treasures to offer a gift to Jesus Christ this Christmas, what would you offer Him?`
+      },
+      {
+        day: 27,
+        date: `Dec 18`,
+        fullDate: `Friday, December 18, 2026`,
+        part: `wisemen`,
+        partLabel: `IV · The Wise Men & Protection`,
+        title: `Divine Protection in Egypt`,
+        reference: `Matthew 2:13–15`,
+        quote: `Arise, and take the young child and his mother, and flee into Egypt, and be thou there until I bring thee word… When he arose, he took the young child and his mother by night, and departed into Egypt.`,
+        context: `Even in danger, God watched over the young family through timely dreams and Joseph’s immediate obedience, preserving the child Jesus to fulfill His saving mission.`,
+        question: `Looking back over this past year, where can you see Heavenly Father’s quiet protection or timely guidance in your life?`
+      },
+      {
+        day: 28,
+        date: `Dec 19`,
+        fullDate: `Saturday, December 19, 2026`,
+        part: `mission`,
+        partLabel: `V · The Savior’s Mission & Living Gift`,
+        title: `A Deliverer from Death and Hell`,
+        reference: `2 Nephi 9:7–10, 13`,
+        quote: `O how great the goodness of our God, who prepareth a way for our escape from the grasp of this awful monster; yea, that monster, death and hell… O how great the plan of our God!`,
+        context: `Because of the Savior’s infinite Atonement, Christmas celebrates far more than an earthly deliverer—it celebrates eternal deliverance from spiritual and physical death.`,
+        question: `What feelings of gratitude rise in you when you consider what your life would be like without our Deliverer, Jesus Christ?`
+      },
+      {
+        day: 29,
+        date: `Dec 20`,
+        fullDate: `Sunday, December 20, 2026`,
+        part: `mission`,
+        partLabel: `V · The Savior’s Mission & Living Gift`,
+        title: `He Succors Us in Every Infirmity`,
+        reference: `Alma 7:11–12`,
+        quote: `And he shall go forth, suffering pains and afflictions and temptations of every kind… that his bowels may be filled with mercy, according to the flesh, that he may know according to the flesh how to succor his people according to their infirmities.`,
+        context: `In Gethsemane and throughout His mortal walk, Christ experienced every sorrow, pain, and loneliness so He could run to our aid with perfect empathy.`,
+        question: `What specific struggle or sorrow do you need the Savior’s personal help (“succor”) to carry right now?`
+      },
+      {
+        day: 30,
+        date: `Dec 21`,
+        fullDate: `Monday, December 21, 2026`,
+        part: `mission`,
+        partLabel: `V · The Savior’s Mission & Living Gift`,
+        title: `Willing to Take Upon Us His Name`,
+        reference: `Doctrine and Covenants 20:77`,
+        quote: `That they are willing to take upon them the name of thy Son, and always remember him and keep his commandments which he has given them; that they may always have his Spirit to be with them.`,
+        context: `Jesus holds many sacred names—Good Shepherd, Faithful and True, Rock, Deliverer, Light of the World. Each week we renew our covenant to carry His name and Spirit.`,
+        question: `Which name or title of Jesus Christ feels closest to your heart today, and how does remembering Him shape your actions?`
+      },
+      {
+        day: 31,
+        date: `Dec 22`,
+        fullDate: `Tuesday, December 22, 2026`,
+        part: `mission`,
+        partLabel: `V · The Savior’s Mission & Living Gift`,
+        title: `We Talk of Christ, We Rejoice in Christ`,
+        reference: `2 Nephi 25:26`,
+        quote: `And we talk of Christ, we rejoice in Christ, we preach of Christ, we prophesy of Christ, and we write according to our prophecies, that our children may know to what source they may look for a remission of their sins.`,
+        context: `Nephi captured the heart of Christian discipleship in one soaring sentence—centering our homes, conversations, and testimony squarely on Jesus Christ.`,
+        question: `How can you more naturally talk of Christ and share His light with your family or friends during these final days before Christmas?`
+      },
+      {
+        day: 32,
+        date: `Dec 23`,
+        fullDate: `Wednesday, December 23, 2026`,
+        part: `mission`,
+        partLabel: `V · The Savior’s Mission & Living Gift`,
+        title: `The Light of Life`,
+        reference: `John 8:12`,
+        quote: `Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.`,
+        context: `Jesus did not merely point toward light—He declared that He Himself is the Light of the World, promising illumination to everyone who chooses to follow Him.`,
+        question: `What does following Jesus Christ look like in one practical decision or relationship in your life right now?`
+      },
+      {
+        day: 33,
+        date: `Dec 24`,
+        fullDate: `Thursday, December 24, 2026 · Christmas Eve`,
+        part: `mission`,
+        partLabel: `V · The Savior’s Mission & Living Gift`,
+        title: `For God So Loved the World`,
+        reference: `John 3:16`,
+        quote: `For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.`,
+        context: `On Christmas Eve, every gift wrapped beneath a tree reflects the Father’s supreme gift—given out of boundless love so none of His children need perish.`,
+        question: `As Christmas Eve settles in, write a brief prayer of gratitude to Heavenly Father for the gift of His Beloved Son.`
+      },
+      {
+        day: 34,
+        date: `Dec 25`,
+        fullDate: `Friday, December 25, 2026 · Christmas Day`,
+        part: `mission`,
+        partLabel: `V · The Savior’s Mission & Living Gift`,
+        title: `Wonderful, Counsellor, The Prince of Peace`,
+        reference: `Isaiah 9:6`,
+        quote: `For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace.`,
+        context: `Today we celebrate the birth of the Babe of Bethlehem—the King who once lay in a manger, who walks beside us today, and who will reign forever in peace.`,
+        question: `Looking back over your 34-day Advent journey, what is the greatest truth or feeling about Jesus Christ you want to carry into the new year?`
+      }
+    ];
+
+    const appState = {
+      entries: {},
+      completed: {},
+      openDay: 1,
+      themeFilter: `all`,
+      statusFilter: `all`,
+      exportOnlyWritten: false,
+      exportIncludeScripture: true
+    };
+
+    let saveTimer = null;
+
+    function getCompletedCount() {
+      let count = 0;
+      for (let i = 0; i < ADVENT_DAYS.length; i++) {
+        if (appState.completed[String(ADVENT_DAYS[i].day)]) {
+          count++;
+        }
+      }
+      return count;
+    }
+
+    function getWrittenEntriesCount() {
+      let count = 0;
+      let totalWords = 0;
+      for (let i = 0; i < ADVENT_DAYS.length; i++) {
+        const txt = (appState.entries[String(ADVENT_DAYS[i].day)] || ``).trim();
+        if (txt.length > 0) {
+          count++;
+          const words = txt.split(/\s+/).filter(Boolean);
+          totalWords += words.length;
+        }
+      }
+      return { count: count, totalWords: totalWords };
+    }
+
+    function countWords(str) {
+      const trimmed = (str || ``).trim();
+      if (!trimmed) return 0;
+      return trimmed.split(/\s+/).filter(Boolean).length;
+    }
+
+    function escapeHtml(text) {
+      return String(text)
+        .replace(/&/g, `&amp;`)
+        .replace(/</g, `&lt;`)
+        .replace(/>/g, `&gt;`)
+        .replace(/"/g, `&quot;`)
+        .replace(/'/g, `&#39;`);
+    }
+
+    function computeChristmasCountdown() {
+      const now = new Date();
+      const start = new Date(2026, 10, 22);
+      const christmas = new Date(2026, 11, 25);
+      const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+      if (todayMidnight < start) {
+        const diffStart = Math.round((start - todayMidnight) / 86400000);
+        const diffXmas = Math.round((christmas - todayMidnight) / 86400000);
+        return {
+          value: diffXmas + ` Days`,
+          caption: diffStart === 1 ? `Advent begins tomorrow (Nov 22)` : `Advent begins in ` + diffStart + ` days`,
+          suggestedDay: 1
+        };
+      }
+      if (todayMidnight <= christmas) {
+        const diffXmas = Math.round((christmas - todayMidnight) / 86400000);
+        const dayIndex = Math.round((todayMidnight - start) / 86400000) + 1;
+        return {
+          value: diffXmas === 0 ? `Christmas!` : diffXmas + (diffXmas === 1 ? ` Day` : ` Days`),
+          caption: `Today is Day ` + dayIndex + ` of 34`,
+          suggestedDay: Math.min(34, Math.max(1, dayIndex))
+        };
+      }
+      return {
+        value: `Complete`,
+        caption: `2026 Advent Season Fulfilled`,
+        suggestedDay: 34
+      };
+    }
+
+    function persistStateImmediate() {
+      const payload = {
+        entries: appState.entries,
+        completed: appState.completed,
+        openDay: appState.openDay
+      };
+      if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+        window.notebookAppApi.setAppState(payload).catch(function () {});
+      }
+    }
+
+    function scheduleStateSave(dayNum) {
+      const indicator = document.getElementById(`save-indicator-` + dayNum);
+      if (indicator) {
+        indicator.textContent = `Saving…`;
+      }
+      if (saveTimer) {
+        clearTimeout(saveTimer);
+      }
+      saveTimer = setTimeout(function () {
+        persistStateImmediate();
+        const ind = document.getElementById(`save-indicator-` + dayNum);
+        if (ind) {
+          ind.textContent = `Saved privately`;
+        }
+      }, 280);
+    }
+
+    function updateSummaryMetrics() {
+      const completedCount = getCompletedCount();
+      const stats = getWrittenEntriesCount();
+      const countdown = computeChristmasCountdown();
+
+      const elCompleted = document.getElementById(`stat-completed`);
+      const elCompletedCap = document.getElementById(`stat-completed-caption`);
+      const elEntries = document.getElementById(`stat-entries`);
+      const elWords = document.getElementById(`stat-words-caption`);
+      const elCount = document.getElementById(`stat-countdown`);
+      const elCountCap = document.getElementById(`stat-countdown-caption`);
+      const elProgressFill = document.getElementById(`progress-fill`);
+      const elProgressBar = document.getElementById(`progress-bar`);
+      const elStickyStatus = document.getElementById(`sticky-status-text`);
+      const elContinueLabel = document.getElementById(`btn-continue-label`);
+
+      if (elCompleted) elCompleted.textContent = completedCount + ` / 34`;
+      if (elCompletedCap) {
+        if (completedCount === 0) {
+          elCompletedCap.textContent = `Begin your 34-day walk`;
+        } else if (completedCount === 34) {
+          elCompletedCap.textContent = `All 34 Advent doors completed`;
+        } else {
+          const pct = Math.round((completedCount / 34) * 100);
+          elCompletedCap.textContent = pct + `% of Advent journey complete`;
+        }
+      }
+
+      if (elEntries) elEntries.textContent = String(stats.count);
+      if (elWords) {
+        elWords.textContent = stats.totalWords + (stats.totalWords === 1 ? ` word recorded` : ` words recorded`);
+      }
+
+      if (elCount) elCount.textContent = countdown.value;
+      if (elCountCap) elCountCap.textContent = countdown.caption;
+
+      if (elProgressFill) {
+        elProgressFill.style.width = ((completedCount / 34) * 100).toFixed(1) + `%`;
+      }
+      if (elProgressBar) {
+        elProgressBar.setAttribute(`aria-valuenow`, String(completedCount));
+      }
+
+      if (elStickyStatus) {
+        elStickyStatus.innerHTML = `<strong>` + completedCount + ` of 34</strong> completed &middot; <strong>` + stats.count + `</strong> notes saved`;
+      }
+
+      if (elContinueLabel) {
+        let nextUnread = 1;
+        for (let i = 0; i < ADVENT_DAYS.length; i++) {
+          if (!appState.completed[String(ADVENT_DAYS[i].day)]) {
+            nextUnread = ADVENT_DAYS[i].day;
+            break;
+          }
+        }
+        elContinueLabel.textContent = completedCount === 34 ? `Review Day 34` : `Open Day ` + nextUnread;
+      }
+    }
+
+    function renderDoorsGrid() {
+      const grid = document.getElementById(`doors-grid`);
+      if (!grid) return;
+
+      let html = ``;
+      for (let i = 0; i < ADVENT_DAYS.length; i++) {
+        const d = ADVENT_DAYS[i];
+        const key = String(d.day);
+        const isDone = Boolean(appState.completed[key]);
+        const hasNote = Boolean((appState.entries[key] || ``).trim().length > 0);
+        const isActive = appState.openDay === d.day;
+
+        const classes = [`door-tile`];
+        if (isDone) classes.push(`is-completed`);
+        if (hasNote) classes.push(`has-note`);
+        if (isActive) classes.push(`is-active`);
+
+        const ariaLabel = `Day ` + d.day + `, ` + d.date + `: ` + d.title + (isDone ? ` (completed)` : hasNote ? ` (reflection written)` : ``);
+
+        html += `
+          <button type="button"
+                  class="` + classes.join(` `) + `"
+                  onclick="jumpToDay(` + d.day + `)"
+                  aria-label="` + escapeHtml(ariaLabel) + `">
+            ` + ((isDone || hasNote) ? `<span class="door-tile-dot" aria-hidden="true"></span>` : ``) + `
+            <span class="door-tile-num">` + d.day + `</span>
+            <span class="door-tile-date">` + escapeHtml(d.date) + `</span>
+          </button>
+        `;
+      }
+      grid.innerHTML = html;
+    }
+
+    function getFilteredDays() {
+      return ADVENT_DAYS.filter(function (d) {
+        if (appState.themeFilter !== `all` && d.part !== appState.themeFilter) {
+          return false;
+        }
+        const key = String(d.day);
+        const isDone = Boolean(appState.completed[key]);
+        const hasNote = Boolean((appState.entries[key] || ``).trim().length > 0);
+
+        if (appState.statusFilter === `unread` && isDone) return false;
+        if (appState.statusFilter === `completed` && !isDone) return false;
+        if (appState.statusFilter === `journaled` && !hasNote) return false;
+        return true;
+      });
+    }
+
+    function renderDaysList() {
+      const container = document.getElementById(`days-list`);
+      if (!container) return;
+
+      const filtered = getFilteredDays();
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="empty-filter-state">
+            <p style="margin: 0 0 var(--space-sm) 0;">No Advent days match this filter yet.</p>
+            <button type="button" class="btn-secondary label-voice" onclick="resetFilters()">Show All 34 Days</button>
+          </div>
+        `;
+        return;
+      }
+
+      let html = ``;
+      for (let i = 0; i < filtered.length; i++) {
+        const d = filtered[i];
+        const key = String(d.day);
+        const isOpen = appState.openDay === d.day;
+        const isDone = Boolean(appState.completed[key]);
+        const noteText = appState.entries[key] || ``;
+        const hasNote = noteText.trim().length > 0;
+        const words = countWords(noteText);
+
+        const rowClasses = [`day-entry`];
+        if (isOpen) rowClasses.push(`is-open`);
+        if (isDone) rowClasses.push(`is-completed`);
+
+        const prevDay = d.day > 1 ? d.day - 1 : null;
+        const nextDay = d.day < 34 ? d.day + 1 : null;
+
+        html += `
+          <article class="` + rowClasses.join(` `) + `" id="day-card-` + d.day + `">
+            <div class="day-header-row">
+              <button type="button"
+                      class="day-trigger"
+                      aria-expanded="` + (isOpen ? `true` : `false`) + `"
+                      aria-controls="day-body-` + d.day + `"
+                      onclick="toggleDayDoor(` + d.day + `)">
+                <div class="day-badge">
+                  <span class="day-badge-num">` + (d.day < 10 ? `0` + d.day : d.day) + `</span>
+                  <span class="label-voice day-badge-date">` + escapeHtml(d.date) + `</span>
+                </div>
+                <div class="day-title-group">
+                  <span class="label-voice day-theme-kicker">` + escapeHtml(d.partLabel) + `</span>
+                  <span class="day-title-text">` + escapeHtml(d.title) + `</span>
+                  <span class="day-ref-meta">
+                    <span>` + escapeHtml(d.reference) + `</span>
+                    ` + (isDone ? `<span class="status-tag label-voice">Completed</span>` : ``) + `
+                    ` + (hasNote ? `<span class="status-tag is-note label-voice">Note Saved</span>` : ``) + `
+                  </span>
+                </div>
+                <span class="day-chevron" aria-hidden="true">
+                  <i data-lucide="chevron-down"></i>
+                </span>
+              </button>
+              <button type="button"
+                      class="quick-check-btn"
+                      aria-pressed="` + (isDone ? `true` : `false`) + `"
+                      aria-label="Mark Day ` + d.day + ` as ` + (isDone ? `incomplete` : `completed`) + `"
+                      title="` + (isDone ? `Completed — tap to unmark` : `Mark Day ` + d.day + ` completed`) + `"
+                      onclick="toggleDayCompleted(` + d.day + `)">
+                <i data-lucide="check" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="day-body" id="day-body-` + d.day + `" ` + (isOpen ? `` : `hidden`) + `>
+              <div class="scripture-panel">
+                <div class="scripture-ref-bar">
+                  <span class="label-voice scripture-ref-label">` + escapeHtml(d.fullDate) + `</span>
+                  <span class="label-voice" style="color: var(--secondary);">` + escapeHtml(d.reference) + `</span>
+                </div>
+                <blockquote class="verse">&ldquo;` + escapeHtml(d.quote) + `&rdquo;</blockquote>
+                <p class="context-note">` + escapeHtml(d.context) + `</p>
+              </div>
+
+              <div class="reflection-prompt-box">
+                <span class="label-voice prompt-kicker">Personal Reflection Question</span>
+                <p class="prompt-question">` + escapeHtml(d.question) + `</p>
+              </div>
+
+              <div class="journal-field-wrap">
+                <div class="journal-label-row">
+                  <label for="journal-input-` + d.day + `" class="label-voice journal-label">Your Reflection &amp; Prayerful Response</label>
+                  <span class="save-indicator" id="save-indicator-` + d.day + `">` + (hasNote ? `Saved privately` : `Ready for your thoughts`) + `</span>
+                </div>
+                <textarea id="journal-input-` + d.day + `"
+                          class="journal-textarea"
+                          placeholder="Write your thoughts, impressions, or prayer here…"
+                          oninput="handleJournalInput(` + d.day + `, this.value)"
+                          onblur="persistStateImmediate()">` + escapeHtml(noteText) + `</textarea>
+                <div class="journal-meta-row">
+                  <span id="word-count-` + d.day + `">` + words + (words === 1 ? ` word` : ` words`) + `</span>
+                  <span>Stored privately on your device</span>
+                </div>
+              </div>
+
+              <div class="door-footer-actions">
+                <button type="button"
+                        class="` + (isDone ? `btn-subtle` : `btn-primary`) + ` label-voice"
+                        aria-pressed="` + (isDone ? `true` : `false`) + `"
+                        onclick="toggleDayCompleted(` + d.day + `)">
+                  <i data-lucide="` + (isDone ? `check-circle-2` : `circle`) + `" aria-hidden="true"></i>
+                  <span>` + (isDone ? `Day Completed` : `Mark Day Completed`) + `</span>
+                </button>
+
+                <div class="step-nav-group">
+                  ` + (prevDay ? `<button type="button" class="btn-subtle label-voice" onclick="jumpToDay(` + prevDay + `)"><i data-lucide="arrow-left" aria-hidden="true"></i><span>Day ` + prevDay + `</span></button>` : ``) + `
+                  ` + (nextDay ? `<button type="button" class="btn-subtle label-voice" onclick="jumpToDay(` + nextDay + `)"><span>Day ` + nextDay + `</span><i data-lucide="arrow-right" aria-hidden="true"></i></button>` : ``) + `
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      container.innerHTML = html;
+      refreshIcons();
+    }
+
+    function refreshIcons() {
+      if (window.lucide && typeof window.lucide.createIcons === `function`) {
+        window.lucide.createIcons();
+      }
+    }
+
+    function toggleDayDoor(dayNum) {
+      if (appState.openDay === dayNum) {
+        appState.openDay = null;
+      } else {
+        appState.openDay = dayNum;
+      }
+      persistStateImmediate();
+      renderDoorsGrid();
+      renderDaysList();
+    }
+
+    function jumpToDay(dayNum) {
+      appState.themeFilter = `all`;
+      appState.statusFilter = `all`;
+      const sel = document.getElementById(`theme-filter`);
+      if (sel) sel.value = `all`;
+      updateFilterPillsUI();
+
+      appState.openDay = dayNum;
+      persistStateImmediate();
+      renderDoorsGrid();
+      renderDaysList();
+
+      const target = document.getElementById(`day-card-` + dayNum);
+      if (target) {
+        target.scrollIntoView({ behavior: `smooth`, block: `start` });
+      }
+    }
+
+    function openNextUnreadDoor() {
+      let targetDay = 1;
+      for (let i = 0; i < ADVENT_DAYS.length; i++) {
+        if (!appState.completed[String(ADVENT_DAYS[i].day)]) {
+          targetDay = ADVENT_DAYS[i].day;
+          break;
+        }
+      }
+      jumpToDay(targetDay);
+    }
+
+    function collapseAllDoors() {
+      appState.openDay = null;
+      persistStateImmediate();
+      renderDoorsGrid();
+      renderDaysList();
+    }
+
+    function handleThemeFilterChange(val) {
+      appState.themeFilter = val;
+      renderDaysList();
+    }
+
+    function setStatusFilter(status) {
+      appState.statusFilter = status;
+      updateFilterPillsUI();
+      renderDaysList();
+    }
+
+    function updateFilterPillsUI() {
+      const statuses = [`all`, `unread`, `journaled`, `completed`];
+      for (let i = 0; i < statuses.length; i++) {
+        const st = statuses[i];
+        const btn = document.getElementById(`pill-status-` + st);
+        if (btn) {
+          btn.setAttribute(`aria-pressed`, appState.statusFilter === st ? `true` : `false`);
+        }
+      }
+    }
+
+    function resetFilters() {
+      appState.themeFilter = `all`;
+      appState.statusFilter = `all`;
+      const sel = document.getElementById(`theme-filter`);
+      if (sel) sel.value = `all`;
+      updateFilterPillsUI();
+      renderDaysList();
+    }
+
+    function toggleDayCompleted(dayNum) {
+      const key = String(dayNum);
+      appState.completed[key] = !appState.completed[key];
+      persistStateImmediate();
+      updateSummaryMetrics();
+      renderDoorsGrid();
+      renderDaysList();
+      refreshExportPreview();
+    }
+
+    function handleJournalInput(dayNum, value) {
+      const key = String(dayNum);
+      appState.entries[key] = value;
+
+      const wordEl = document.getElementById(`word-count-` + dayNum);
+      if (wordEl) {
+        const w = countWords(value);
+        wordEl.textContent = w + (w === 1 ? ` word` : ` words`);
+      }
+
+      updateSummaryMetrics();
+      renderDoorsGrid();
+      refreshExportPreview();
+      scheduleStateSave(dayNum);
+    }
+
+    function getExportRows() {
+      const onlyWrittenEl = document.getElementById(`export-only-written`);
+      const includeScriptureEl = document.getElementById(`export-include-scripture`);
+      const onlyWritten = onlyWrittenEl ? onlyWrittenEl.checked : false;
+      const includeScripture = includeScriptureEl ? includeScriptureEl.checked : true;
+
+      const rows = [];
+      for (let i = 0; i < ADVENT_DAYS.length; i++) {
+        const d = ADVENT_DAYS[i];
+        const key = String(d.day);
+        const response = (appState.entries[key] || ``).trim();
+        const isDone = Boolean(appState.completed[key]);
+
+        if (onlyWritten && response.length === 0 && !isDone) {
+          continue;
+        }
+        rows.push({
+          day: d.day,
+          date: d.fullDate,
+          partLabel: d.partLabel,
+          title: d.title,
+          reference: d.reference,
+          quote: d.quote,
+          question: d.question,
+          response: response,
+          isDone: isDone,
+          includeScripture: includeScripture
+        });
+      }
+      return rows;
+    }
+
+    function refreshExportPreview() {
+      const preview = document.getElementById(`export-preview`);
+      if (!preview) return;
+
+      const rows = getExportRows();
+      if (rows.length === 0) {
+        preview.innerHTML = `
+          <div style="text-align: center; padding: var(--space-lg); color: var(--on-surface-variant);">
+            <p style="margin: 0 0 var(--space-sm) 0;">No reflections or completed days recorded yet under this filter.</p>
+            <p style="margin: 0; font-style: italic;">Uncheck “Show only days with written reflections” to preview all 34 days, or open Day 1 above to write your first entry.</p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = ``;
+      for (let i = 0; i < rows.length; i++) {
+        const r = rows[i];
+        html += `
+          <div class="export-entry-item">
+            <span class="label-voice export-entry-meta">Day ` + r.day + ` &middot; ` + escapeHtml(r.date) + (r.isDone ? ` &middot; Completed` : ``) + `</span>
+            <h3 class="export-entry-title">` + escapeHtml(r.title) + ` (` + escapeHtml(r.reference) + `)</h3>
+            ` + (r.includeScripture ? `<p class="export-entry-scripture">&ldquo;` + escapeHtml(r.quote) + `&rdquo;</p><p class="export-entry-prompt"><strong>Reflection:</strong> ` + escapeHtml(r.question) + `</p>` : ``) + `
+            ` + (r.response.length > 0
+              ? `<p class="export-entry-response">` + escapeHtml(r.response) + `</p>`
+              : `<p class="export-entry-empty">[No written reflection recorded for this day yet]</p>`) + `
+          </div>
+        `;
+      }
+      preview.innerHTML = html;
+    }
+
+    function buildPlainTextJournal(format) {
+      const rows = getExportRows();
+      const completedCount = getCompletedCount();
+      const stats = getWrittenEntriesCount();
+      const isMd = format === `md`;
+
+      const lines = [];
+      if (isMd) {
+        lines.push(`# Preparing the Way — 34-Day Christmas Scripture Advent Journal`);
+        lines.push(`*November 22 – December 25, 2026*`);
+        lines.push(``);
+        lines.push(`- **Doors Completed:** ` + completedCount + ` / 34`);
+        lines.push(`- **Reflections Written:** ` + stats.count + ` (` + stats.totalWords + ` words)`);
+        lines.push(``);
+        lines.push(`---`);
+        lines.push(``);
+      } else {
+        lines.push(`PREPARING THE WAY — 34-DAY CHRISTMAS SCRIPTURE ADVENT JOURNAL`);
+        lines.push(`November 22 - December 25, 2026`);
+        lines.push(`Doors Completed: ` + completedCount + ` / 34 | Reflections Written: ` + stats.count + ` (` + stats.totalWords + ` words)`);
+        lines.push(`================================================================`);
+        lines.push(``);
+      }
+
+      if (rows.length === 0) {
+        lines.push(`No days matched your current export filter.`);
+        return lines.join(`\n`);
+      }
+
+      for (let i = 0; i < rows.length; i++) {
+        const r = rows[i];
+        const statusText = r.isDone ? ` [Completed]` : ``;
+        if (isMd) {
+          lines.push(`## Day ` + r.day + ` — ` + r.title + statusText);
+          lines.push(`**` + r.date + `** | *` + r.reference + `*`);
+          lines.push(``);
+          if (r.includeScripture) {
+            lines.push(`> "` + r.quote + `"`);
+            lines.push(``);
+            lines.push(`**Reflection Question:** ` + r.question);
+            lines.push(``);
+          }
+          lines.push(`**My Response:**`);
+          lines.push(r.response.length > 0 ? r.response : `[No reflection recorded for this day]`);
+          lines.push(``);
+          lines.push(`---`);
+          lines.push(``);
+        } else {
+          lines.push(`DAY ` + r.day + `: ` + r.title.toUpperCase() + statusText);
+          lines.push(r.date + ` | ` + r.reference);
+          if (r.includeScripture) {
+            lines.push(`Scripture: "` + r.quote + `"`);
+            lines.push(`Question: ` + r.question);
+          }
+          lines.push(`My Reflection:`);
+          lines.push(r.response.length > 0 ? r.response : `[No reflection recorded for this day]`);
+          lines.push(`----------------------------------------------------------------`);
+          lines.push(``);
+        }
+      }
+
+      return lines.join(`\n`);
+    }
+
+    function setExportFeedback(message, isError) {
+      const el = document.getElementById(`export-feedback`);
+      if (!el) return;
+      el.textContent = message;
+      if (isError) {
+        el.classList.add(`is-error`);
+      } else {
+        el.classList.remove(`is-error`);
+      }
+    }
+
+    function fallbackCopyText(text) {
+      const helper = document.createElement(`textarea`);
+      helper.value = text;
+      helper.setAttribute(`readonly`, ``);
+      helper.style.position = `fixed`;
+      helper.style.left = `-9999px`;
+      document.body.appendChild(helper);
+      helper.select();
+      let copied = false;
+      try {
+        copied = document.execCommand(`copy`);
+      } catch (e) {
+        copied = false;
+      }
+      document.body.removeChild(helper);
+      return copied;
+    }
+
+    function copyJournalToClipboard() {
+      const text = buildPlainTextJournal(`txt`);
+      const rowCount = getExportRows().length;
+
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === `function`) {
+        navigator.clipboard.writeText(text).then(function () {
+          setExportFeedback(`Copied ` + rowCount + ` days to your clipboard—ready to paste into Notes, Google Docs, or email.`, false);
+        }).catch(function () {
+          const ok = fallbackCopyText(text);
+          if (ok) {
+            setExportFeedback(`Copied ` + rowCount + ` days to your clipboard.`, false);
+          } else {
+            setExportFeedback(`Clipboard access was blocked by the browser. Please use Download Journal (.txt or .md) instead.`, true);
+          }
+        });
+      } else {
+        const ok = fallbackCopyText(text);
+        if (ok) {
+          setExportFeedback(`Copied ` + rowCount + ` days to your clipboard.`, false);
+        } else {
+          setExportFeedback(`Clipboard access is unavailable here. Please use Download Journal (.txt or .md) instead.`, true);
+        }
+      }
+    }
+
+    function downloadJournalFile(ext) {
+      const safeExt = ext === `md` ? `md` : `txt`;
+      const content = buildPlainTextJournal(safeExt);
+      const filename = `christmas-advent-journal-2026.` + safeExt;
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === `function`) {
+        window.notebookAppApi.triggerFileDownload({
+          content: content,
+          contentType: `text/plain`,
+          encoding: `UTF-8`,
+          filename: filename
+        });
+        setExportFeedback(`Downloading ` + filename + `…`, false);
+        return;
+      }
+
+      const blob = new Blob([content], { type: `text/plain;charset=utf-8` });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement(`a`);
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      setExportFeedback(`Downloaded ` + filename + `.`, false);
+    }
+
+    function printJournal() {
+      refreshExportPreview();
+      setExportFeedback(`Opening print / Save to PDF dialog…`, false);
+      window.print();
+    }
+
+    function jumpToExportTool() {
+      refreshExportPreview();
+      const panel = document.getElementById(`export-sanctuary`);
+      if (panel) {
+        panel.scrollIntoView({ behavior: `smooth`, block: `start` });
+      }
+    }
+
+    function handleResetJournal(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        const span = btn.querySelector(`span`);
+        if (span) span.textContent = `Tap Again to Confirm Reset`;
+        setTimeout(function () {
+          if (btn.dataset.armed === `true`) {
+            btn.dataset.armed = `false`;
+            const s = btn.querySelector(`span`);
+            if (s) s.textContent = `Reset All Entries`;
+          }
+        }, 4000);
+        return;
+      }
+
+      btn.dataset.armed = `false`;
+      const span = btn.querySelector(`span`);
+      if (span) span.textContent = `Reset All Entries`;
+
+      appState.entries = {};
+      appState.completed = {};
+      appState.openDay = 1;
+      persistStateImmediate();
+      updateSummaryMetrics();
+      renderDoorsGrid();
+      renderDaysList();
+      refreshExportPreview();
+      setExportFeedback(`All journal entries and checkmarks have been cleared.`, false);
+    }
+
+    async function initApp() {
+      const countdown = computeChristmasCountdown();
+      appState.openDay = countdown.suggestedDay;
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+        try {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved && typeof saved === `object`) {
+            if (saved.entries && typeof saved.entries === `object`) {
+              appState.entries = saved.entries;
+            }
+            if (saved.completed && typeof saved.completed === `object`) {
+              appState.completed = saved.completed;
+            }
+            if (typeof saved.openDay === `number` || saved.openDay === null) {
+              appState.openDay = saved.openDay;
+            }
+          }
+        } catch (e) {
+          // Proceed cleanly with default empty state
+        }
+      }
+
+      updateSummaryMetrics();
+      renderDoorsGrid();
+      renderDaysList();
+      refreshExportPreview();
+      refreshIcons();
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+        window.notebookAppApi.notifyAppReady();
+      }
+    }
+
+    document.addEventListener(`DOMContentLoaded`, initApp);
+  </script>
+</body>
+</html>
