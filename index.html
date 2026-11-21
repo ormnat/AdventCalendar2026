@@ -612,9 +612,10 @@
 
     .open-header {
       display: flex;
+      flex-wrap: wrap;
       align-items: flex-start;
       justify-content: space-between;
-      gap: var(--space-md);
+      gap: var(--space-sm) var(--space-md);
       padding: var(--space-md) var(--space-md) var(--space-sm);
       border-bottom: var(--gilt-rule-muted);
     }
@@ -623,6 +624,14 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
+      flex: 1 1 180px;
+    }
+
+    .open-header-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      flex-shrink: 0;
     }
 
     .open-badges {
@@ -1136,7 +1145,7 @@
 
       <footer class="page-footer">
         <p class="footer-note">
-          Scriptures drawn from the King James Bible, the Book of Mormon, and the Doctrine and Covenants, paired with seasonal Christ-centered reflections. Your opened doors and journal entries save automatically in your notebook state.
+          Scriptures drawn from the King James Bible, the Book of Mormon, and the Doctrine and Covenants, paired with seasonal Christ-centered reflections. Your opened doors and journal entries save automatically in this browser.
         </p>
         <div class="reset-row">
           <button type="button" class="btn btn-ghost" id="reset-progress-btn" onclick="handleResetProgress(this)">Reset All Doors &amp; Notes</button>
@@ -1195,9 +1204,9 @@
     </div>
   </div>
 
-  <api-shim></api-shim>
-
   <script>
+    const STORAGE_KEY = 'advent_34_days_light_hope_v1';
+
     const ADVENT_DAYS = [
       {
         day: 1,
@@ -1627,17 +1636,16 @@
       return typeof val === 'string' ? val : '';
     }
 
-    async function persistState() {
+    function persistState() {
       try {
-        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === 'function') {
-          await window.notebookAppApi.setAppState({
-            openedDays: appState.openedDays,
-            expandedDays: appState.expandedDays,
-            journals: appState.journals
-          });
-        }
+        const payload = JSON.stringify({
+          openedDays: appState.openedDays,
+          expandedDays: appState.expandedDays,
+          journals: appState.journals
+        });
+        window.localStorage.setItem(STORAGE_KEY, payload);
       } catch (err) {
-        // Keep UI responsive even if host storage temporarily declines
+        // Keep UI responsive if storage is unavailable (e.g., private browsing quota)
       }
     }
 
@@ -1645,8 +1653,8 @@
       const indicator = document.getElementById(`save-status-${dayNum}`);
       if (indicator) indicator.textContent = `Saving…`;
       if (saveTimer) clearTimeout(saveTimer);
-      saveTimer = setTimeout(async function () {
-        await persistState();
+      saveTimer = setTimeout(function () {
+        persistState();
         const latestIndicator = document.getElementById(`save-status-${dayNum}`);
         if (latestIndicator) latestIndicator.textContent = `Saved`;
       }, 280);
@@ -1761,6 +1769,16 @@
           `;
         }
 
+        const closeDoorBtn = `
+          <button type="button" class="icon-btn" onclick="lockDay(${entry.day})" aria-label="Close Day ${entry.day} door" title="Close door (your reflection is kept)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="0"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <span>Close</span>
+          </button>
+        `;
+
         if (!expanded) {
           const previewBody = noteText.trim().length > 0
             ? `<p class="preview-note">“${escapeHtml(noteText.trim())}”</p>`
@@ -1784,9 +1802,12 @@
                   </div>
                   <h2 class="open-title" style="font-size: 1.32rem;">${escapeHtml(entry.theme)}</h2>
                 </div>
-                <button type="button" class="icon-btn" onclick="toggleExpandDay(${entry.day})" aria-expanded="false" aria-label="Expand Day ${entry.day}">
-                  <span>Expand</span>
-                </button>
+                <div class="open-header-actions">
+                  ${closeDoorBtn}
+                  <button type="button" class="icon-btn" onclick="toggleExpandDay(${entry.day})" aria-expanded="false" aria-label="Expand Day ${entry.day}">
+                    <span>Expand</span>
+                  </button>
+                </div>
               </div>
               <div class="open-collapsed-preview">
                 <span class="preview-ref">${escapeHtml(entry.reference)}</span>
@@ -1815,9 +1836,12 @@
                 </div>
                 <h2 class="open-title">${escapeHtml(entry.theme)}</h2>
               </div>
-              <button type="button" class="icon-btn" onclick="toggleExpandDay(${entry.day})" aria-expanded="true" aria-label="Collapse Day ${entry.day}">
-                <span>Minimize</span>
-              </button>
+              <div class="open-header-actions">
+                ${closeDoorBtn}
+                <button type="button" class="icon-btn" onclick="toggleExpandDay(${entry.day})" aria-expanded="true" aria-label="Collapse Day ${entry.day}">
+                  <span>Minimize</span>
+                </button>
+              </div>
             </div>
             <div class="open-body">
               <div class="scripture-panel">
@@ -1856,7 +1880,7 @@
       updateMetrics();
     }
 
-    async function unlockDay(dayNum) {
+    function unlockDay(dayNum) {
       if (!isDayOpened(dayNum)) {
         appState.openedDays.push(dayNum);
         appState.openedDays.sort(function (a, b) { return a - b; });
@@ -1866,7 +1890,7 @@
       }
       lastJustUnlocked = dayNum;
       renderCalendar();
-      await persistState();
+      persistState();
 
       const card = document.getElementById(`day-card-${dayNum}`);
       if (card) {
@@ -1877,7 +1901,15 @@
       }, 1000);
     }
 
-    async function toggleExpandDay(dayNum) {
+    function lockDay(dayNum) {
+      appState.openedDays = appState.openedDays.filter(function (n) { return n !== dayNum; });
+      appState.expandedDays = appState.expandedDays.filter(function (n) { return n !== dayNum; });
+      lastJustUnlocked = null;
+      renderCalendar();
+      persistState();
+    }
+
+    function toggleExpandDay(dayNum) {
       const idx = appState.expandedDays.indexOf(dayNum);
       if (idx === -1) {
         appState.expandedDays.push(dayNum);
@@ -1886,7 +1918,7 @@
       }
       lastJustUnlocked = null;
       renderCalendar();
-      await persistState();
+      persistState();
     }
 
     function handleJournalInput(dayNum, value) {
@@ -1895,12 +1927,12 @@
       schedulePersist(dayNum);
     }
 
-    async function handleJournalBlur(dayNum) {
+    function handleJournalBlur(dayNum) {
       if (saveTimer) {
         clearTimeout(saveTimer);
         saveTimer = null;
       }
-      await persistState();
+      persistState();
       const indicator = document.getElementById(`save-status-${dayNum}`);
       if (indicator) {
         indicator.textContent = getJournalText(dayNum).trim().length > 0 ? `Saved` : `Auto-saves as you write`;
@@ -1932,7 +1964,7 @@
       if (banner) banner.classList.remove('is-visible');
     }
 
-    async function jumpToToday() {
+    function jumpToToday() {
       const todayInfo = getTodayMatch();
       if (currentFilter !== 'all') {
         setFilter('all');
@@ -2071,17 +2103,6 @@
       const filename = `christmas-scripture-journal-34-days.txt`;
       const feedbackEl = document.getElementById('export-feedback');
 
-      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === 'function') {
-        window.notebookAppApi.triggerFileDownload({
-          content: text,
-          contentType: 'text/plain',
-          encoding: 'UTF-8',
-          filename: filename
-        });
-        if (feedbackEl) feedbackEl.textContent = `Download started: ${filename}`;
-        return;
-      }
-
       const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -2100,7 +2121,7 @@
       window.print();
     }
 
-    async function handleResetProgress(btn) {
+    function handleResetProgress(btn) {
       if (!btn) return;
       if (btn.dataset.armed !== 'true') {
         btn.dataset.armed = 'true';
@@ -2119,7 +2140,7 @@
       appState = { openedDays: [], expandedDays: [], journals: {} };
       lastJustUnlocked = null;
       renderCalendar();
-      await persistState();
+      persistState();
       showBanner(`All 34 doors have been locked again and personal reflections cleared.`);
     }
 
@@ -2132,6 +2153,14 @@
       }
     });
 
+    window.addEventListener('pagehide', function () {
+      if (saveTimer) {
+        clearTimeout(saveTimer);
+        saveTimer = null;
+      }
+      persistState();
+    });
+
     const modalEl = document.getElementById('export-modal');
     if (modalEl) {
       modalEl.addEventListener('click', function (event) {
@@ -2141,10 +2170,11 @@
       });
     }
 
-    async function initApp() {
+    function initApp() {
       try {
-        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === 'function') {
-          const saved = await window.notebookAppApi.getAppState();
+        const raw = window.localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const saved = JSON.parse(raw);
           if (saved && typeof saved === 'object') {
             if (Array.isArray(saved.openedDays)) {
               appState.openedDays = saved.openedDays.filter(function (n) {
@@ -2166,10 +2196,6 @@
       }
 
       renderCalendar();
-
-      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === 'function') {
-        window.notebookAppApi.notifyAppReady();
-      }
     }
 
     initApp();
